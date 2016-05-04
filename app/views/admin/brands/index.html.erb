@@ -11,12 +11,12 @@
   </thead>
 
   <tbody>
-    <% @brands.each do |brand| %>
+    <% @brands.each do |admin_brand| %>
       <tr>
-        <td><%= brand.name %></td>
-        <td><%= link_to 'Show', brand %></td>
-        <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
-        <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= admin_brand.name %></td>
+        <td><%= link_to 'Show', admin_brand %></td>
+        <td><%= link_to 'Edit', edit_admin_brand_path(admin_brand) %></td>
+        <td><%= link_to 'Destroy', admin_brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Brand', new_brand_path %>
+<%= link_to 'New Brand', admin_new_brand_path %>
