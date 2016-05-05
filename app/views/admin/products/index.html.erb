@@ -26,14 +26,14 @@
             <tr>
               <td><%= image_tag admin_product.avatar.url (:thumb) %></td>
               <td class="vert-align"><%= admin_product.name %></td>
-              <td class="vert-align"><%= admin_product.price %></td>
+              <td class="vert-align"><%= number_to_currency admin_product.price %></td>
               <td class="vert-align"><%= admin_product.quantity %></td>
               <td class="vert-align"><%= admin_product.description %></td>
               <td class="vert-align"><%= admin_product.brand.name %></td>
               <td class="vert-align"><%= admin_product.category.name %></td>
-              <td><%= link_to 'Show', admin_product_path(admin_product) %></td>
-              <td><%= link_to 'Edit', edit_admin_product_path(admin_product) %></td>
-              <td><%= link_to 'Destroy', admin_product_path(admin_product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td class="vert-align"><%= link_to 'Show', admin_product_path(admin_product) %></td>
+              <td class="vert-align"><%= link_to 'Edit', edit_admin_product_path(admin_product) %></td>
+              <td class="vert-align"><%= link_to 'Destroy', admin_product_path(admin_product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
