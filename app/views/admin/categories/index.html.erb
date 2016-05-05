@@ -2,25 +2,27 @@
 
 <h1>Listing Categories</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @categories.each do |admin_category| %>
+<div class="col-xs-12">
+  <table class="table table-striped table-hover">
+    <thead>
       <tr>
-        <td><%= admin_category.name %></td>
-        <td><%= link_to 'Show', admin_category %></td>
-        <td><%= link_to 'Edit', edit_admin_category_path(admin_category) %></td>
-        <td><%= link_to 'Destroy', admin_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @categories.each do |admin_category| %>
+        <tr>
+          <td><%= admin_category.name %></td>
+          <td><%= link_to 'Show', admin_category_path(admin_category) %></td>
+          <td><%= link_to 'Edit', edit_admin_category_path(admin_category) %></td>
+          <td><%= link_to 'Destroy', admin_category_path(admin_category), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 
