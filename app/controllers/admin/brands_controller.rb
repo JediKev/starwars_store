@@ -42,7 +42,7 @@ class Admin::BrandsController < ApplicationController
   def update
     respond_to do |format|
       if @brand.update(brand_params)
-        format.html { admin_brand_url(redirect_to admin_brand_url(@brand), notice: 'Brand was successfully updated.' }
+        format.html { redirect_to admin_brand_url(@brand), notice: 'Brand was successfully updated.' }
         format.json { render :show, status: :ok, location: @brand }
       else
         format.html { render :edit }
