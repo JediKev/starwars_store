@@ -1,3 +1,5 @@
+<%= render 'search_form' %>
+
 <h1 class="text-center">Welcome Ya' Scruffy Nerf Herders!</h1>
 
 <% if params[:category_id] %>
@@ -19,7 +21,7 @@
 						<a href="#">
 							<h5><%= product.name %></h5>
 						</a>
-						<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal_<%= product.id %>">
+						<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal_<%= product.id %>">
 							+ Quick Info
 						</button>
 					</div>
