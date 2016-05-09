@@ -1,38 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<div>
-  <%= image_tag @product.avatar.url (:medium)%>
+<div class="col-xs-10 col-xs-offset-1">
+  <div class="text-center" id="image">
+    <%= image_tag @product.avatar.url (:medium)%>
+  </div>
+
+  <p class="text-center">
+    <strong><%= @product.name %></strong>
+  </p>
+
+  <p class="text-center" id="price">
+    <%= number_to_currency @product.price %>
+  </p>
+
+  <p>
+    <strong>Quantity:</strong>
+    <%= @product.quantity %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
+
+  <p>
+    <strong>Brand:</strong>
+    <%= @product.brand.name %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= @product.category.name %>
+  </p>
+
+  <%= link_to 'Edit', edit_admin_product_path(@product) %> |
+  <%= link_to 'Back', admin_products_path %>
 </div>
-
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= number_to_currency @product.price %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @product.quantity %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Brand:</strong>
-  <%= @product.brand.name %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @product.category.name %>
-</p>
-
-<%= link_to 'Edit', edit_admin_product_path(@product) %> |
-<%= link_to 'Back', admin_products_path %>

@@ -1,0 +1,67 @@
+<h1 class="text-center">Welcome Ya' Scruffy Nerf Herders!</h1>
+<div class="container-fluid">
+	<div class="row">
+		<% @products.each do |product| %>
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<%= image_tag product.avatar.url (:medium) %>
+						<span class="text-right pull-right">
+							<h5><%= number_to_currency product.price %></h5>
+						</span>
+						<a href="#">
+							<h5><%= product.name %></h5>
+						</a>
+						<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal_<%= product.id %>">
+							+ Quick Info
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Modal -->
+			<div class="modal fade" id="myModal_<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel"><%= product.name %></h4>
+			      </div>
+			      <div class="modal-body">
+			        <p><%= number_to_currency product.price %></p>
+			        <p><%= product.description %></p>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-primary">Save changes</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

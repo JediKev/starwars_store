@@ -1,29 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Brands</h1>
+<h1>All Brands<p><%= link_to '<i class="fa fa-plus fa-fw"></i>Add Brand'.html_safe, new_admin_brand_path %></p></h1>
 
-<div class="col-xs-12">
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+<div class="col-xs-4 col-xs-offset-4">
+  <div class="container-fluid">
+    <div class="panel panel-default">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="text-center">Name</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
 
-    <tbody>
-      <% @brands.each do |admin_brand| %>
-        <tr>
-          <td><%= admin_brand.name %></td>
-          <td><%= link_to 'Show', admin_brand_path(admin_brand) %></td>
-          <td><%= link_to 'Edit', edit_admin_brand_path(admin_brand) %></td>
-          <td><%= link_to 'Destroy', admin_brand_path(admin_brand), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+          <tbody>
+            <% @brands.each do |admin_brand| %>
+              <tr>
+                <td class="text-center"><%= admin_brand.name %></td>
+                <td class="vert-align"><%= link_to '<i class="fa fa-file-text-o"></i>'.html_safe, admin_brand_path(admin_brand) %></td>
+                <td class="vert-align"><%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_admin_brand_path(admin_brand) %></td>
+                <td class="vert-align"><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_brand_path(admin_brand), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
-
-<br>
-
-<%= link_to 'New Brand', new_admin_brand_path %>

@@ -1,11 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Products</h1>
+<h1>All Products<p id="new"><%= link_to '<i class="fa fa-plus fa-fw"></i>Add Product'.html_safe, new_admin_product_path %></p></h1>
 
 <div class="container-fluid">
   <div class="panel panel-default">
-    <!-- Table -->
-  <!-- <div class="col-xs-10 col-xs-offset-1"> -->
     <div class="table-responsive">
       <table class="table table-hover">
         <thead>
@@ -31,18 +29,17 @@
               <td class="vert-align"><%= admin_product.description %></td>
               <td class="vert-align"><%= admin_product.brand.name %></td>
               <td class="vert-align"><%= admin_product.category.name %></td>
-              <td class="vert-align"><%= link_to 'Show', admin_product_path(admin_product) %></td>
-              <td class="vert-align"><%= link_to 'Edit', edit_admin_product_path(admin_product) %></td>
-              <td class="vert-align"><%= link_to 'Destroy', admin_product_path(admin_product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td class="vert-align text-center">
+                <ul>
+                  <li><%= link_to '<i class="fa fa-file-text-o"></i>'.html_safe, admin_product_path(admin_product) %></li>
+                  <li><%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_admin_product_path(admin_product) %></li>
+                  <li><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_product_path(admin_product), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                </ul>
+              </td>
             </tr>
           <% end %>
         </tbody>
       </table>
     </div>
-  <!-- </div> -->
   </div>
 </div>
-
-<br>
-
-<%= link_to 'New Product', new_admin_product_path %>

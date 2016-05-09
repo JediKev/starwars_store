@@ -17,12 +17,103 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
+
+html {
+	font-family: 'Lato', sans-serif;
+}
+
+body {
+	padding-top: 4%;
+}
+
+a {
+	color: rgb(38,38,38);
+}
+
+a:visited {
+	color: rgb(38,38,38);
+}
+
+a:hover {
+	color: rgb(133,133,133);
+	background-color: transparent;
+	text-decoration: none;
+}
+
+.navbar, .navbar-default {
+	background-color: rgba(255,255,255,0.98);
+	border-bottom: 1px solid rgba(38,38,38,0.5);
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: rgb(38,38,38);
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: rgb(133,133,133);
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus {
+	color: rgb(38,38,38);
+	background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a:hover {
+	color: rgb(133,133,133);
+	background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+	background-color: transparent;
+}
+
+.dropdown-menu > li > a:hover {
+	color: rgb(133,133,133);
+	background-color: transparent;
+}
 
 h1 {
 	text-align: center;
 	padding-bottom: 2%;
 }
 
+.panel {
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.02);
+}
+
+.panel-default {
+	border-color: rgba(38,38,38,0.5);
+}
+
+table.table.table-hover tr th {
+	border-bottom: 1px solid rgba(38,38,38,0.5);
+}
+
+table.table.table-hover tr td {
+	border-bottom: 1px solid rgba(38,38,38,0.5);
+}
+
 .table tbody>tr>td.vert-align{
     vertical-align: middle;
 }
+
+.table.table-hover tr td ul li {
+	list-style-type: none;
+	padding: 0 100% 0 0;
+}
+
+.table.table-hover tr:hover {
+	background-color: rgba(0,0,0,0.02);
+}
+
+.table.table-hover thead tr:hover {
+	background-color: transparent;
+}
+
+
+
+
+
