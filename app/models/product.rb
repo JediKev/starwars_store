@@ -24,6 +24,5 @@ class Product < ActiveRecord::Base
         return false
       end
     end
-  end
 
 end
