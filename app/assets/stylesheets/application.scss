@@ -41,9 +41,13 @@ a:hover {
 	text-decoration: none;
 }
 
+.navbar, .navbar-default, .navbar-fixed-top {
+	box-shadow: 0 2px 13px rgba(0, 0, 0, 0.06);
+	border: none;
+}
+
 .navbar, .navbar-default {
-	background-color: rgba(255,255,255,0.98);
-	border-bottom: 1px solid rgba(38,38,38,0.5);
+	background-color: rgba(255,255,255,0.99);
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -85,15 +89,16 @@ h1 {
 }
 
 .panel-default {
-	border-color: rgba(38,38,38,0.5);
+	border: none;
+	box-shadow: 0 0px 25px rgba(0, 0, 0, 0.08);
 }
 
 table.table.table-hover tr th {
-	border-bottom: 1px solid rgba(38,38,38,0.5);
+	// border-bottom: 1px solid rgba(38,38,38,0.5);
 }
 
 table.table.table-hover tr td {
-	border-bottom: 1px solid rgba(38,38,38,0.5);
+	// border-bottom: 1px solid rgba(38,38,38,0.5);
 }
 
 .table tbody>tr>td.vert-align{
