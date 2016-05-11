@@ -18,12 +18,19 @@
 						<a href="#">
 							<h5><%= product.name %></h5>
 						</a>
-						<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal_<%= product.id %>">
-							+ Quick Look
-						</button>
 						<span class="text-right pull-right">
 							<h5><%= number_to_currency product.price %></h5>
 						</span>
+						<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal_<%= product.id %>">
+							+ Quick Look
+						</button>
+<<<<<<< HEAD
+						<span class="text-right pull-right">
+							<h5><%= number_to_currency product.price %></h5>
+						</span>
+=======
+						<%= button_to 'Add To Cart', line_items_path(product_id: product), class: "btn btn-success btn-sm" %>
+>>>>>>> cart
 					</div>
 				</div>
 			</div>
