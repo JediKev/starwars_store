@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+  include CurrentCart
+  before_action :set_cart, only: [:new, :create]
+  before_action :authenticate_user!
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
@@ -14,7 +17,12 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
+    if @cart.line_items.empty?
+      redirect_to storefront_index_url, notice: "Your cart is empty. Add something to it!"
+      return
+    end
     @order = Order.new
+    @order.user_id = current_user.id
   end
 
   # GET /orders/1/edit
@@ -25,15 +33,15 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    @order.user_id = current_user.id
+    @order.add_line_items_from_cart(@cart)
 
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
-      else
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
+    if @order.save
+      Cart.destroy(session[:cart_id])
+      session[:cart_id] = nil
+      redirect_to shop_path, notice: 'Order was successfully processed. Thank you for shopping at Star Gear.'
+    else
+      render :new
     end
   end
 
