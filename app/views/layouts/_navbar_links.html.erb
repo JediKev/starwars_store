@@ -31,6 +31,6 @@
       </ul>
   </li>
   <li>
-    <%= link_to fa_icon('shopping-bag', text: 'Cart'), edit_user_registration_path %>
+    <%= link_to fa_icon('shopping-bag', text: 'Cart'), edit_cart_path(session[:cart_id]) %>
   </li>
 </ul>
