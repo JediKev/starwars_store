@@ -73,6 +73,10 @@ a:hover {
 	background-color: transparent;
 }
 
+.dropdown-menu {
+	border: none;
+}
+
 .dropdown-menu > li > a:hover {
 	color: rgb(133,133,133);
 	background-color: transparent;
@@ -122,7 +126,12 @@ table.table.table-hover tr td {
 	border: none;
 }
 
+body>div>a:visited {
+	color: white;
+}
 
-
+td>ul>li>a:visited {
+	color: white;
+}
 
 
