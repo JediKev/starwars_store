@@ -31,12 +31,29 @@
               <td class="vert-align"><%= admin_product.category.name %></td>
               <td class="vert-align text-center">
                 <ul>
-                  <li><%= link_to '<i class="fa fa-file-text-o"></i>'.html_safe, admin_product_path(admin_product) %></li>
-                  <li><%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_admin_product_path(admin_product) %></li>
-                  <li><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_product_path(admin_product), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                  <li><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal_<%= admin_product.id %>"><i class="fa fa-file-text-o"></i></button></li>
+                  <li><%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, edit_admin_product_path(admin_product), class: "btn btn-warning btn-sm" %></li>
+                  <li><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, admin_product_path(admin_product), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %></li>
                 </ul>
               </td>
             </tr>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal_<%= admin_product.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center" id="myModalLabel"><%= admin_product.name %></h4>
+                  </div>
+                  <div class="modal-body text-center">
+                    <p><%= image_tag admin_product.avatar.url (:medium) %></p>
+                    <h3><%= number_to_currency admin_product.price %></h3>
+                    <p><%= admin_product.description %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
           <% end %>
         </tbody>
       </table>
