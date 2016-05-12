@@ -30,7 +30,7 @@
         <li><%= link_to "Products", admin_products_path %></li>
       </ul>
   </li>
-  <li>
-    <%= link_to fa_icon('shopping-bag', text: 'Cart'), edit_cart_path(session[:cart_id]) %>
-  </li>
+  <% if session[:cart_id] %>
+  <li><%= link_to fa_icon('shopping-bag', text: 'Cart'), edit_cart_path(session[:cart_id]) %></li>
+  <% end %>
 </ul>
