@@ -18,15 +18,17 @@
 						<a class = "text-center" href = "#">
 							<h5><%= product.name %></h5>
 						</a>
-						<div display="inline">
-							<span>
-								<h4 class="text-center"><%= number_to_currency product.price %></h4>
-								<%= button_to 'Add To Cart', line_items_path(product_id: product), class: "btn btn-success btn-sm pull-right btn-responsive" %>
-							</span>
+						<span display="inline">
 							<div>
-								<button type="button" class="btn btn-danger btn-sm btn-responsive" data-toggle="modal" data-target="#myModal_<%= product.id %>">+ Quick Look</button>
+								<button type="button" class="btn btn-danger btn-sm btn-responsive pull-left" data-toggle="modal" data-target="#myModal_<%= product.id %>">+ Quick Look</button>
 							</div>
-						</div>
+							<div>
+								<%= button_to 'Add To Cart', line_items_path(product_id: product), class: "btn btn-success btn-sm pull-right btn-responsive" %>
+							</div>
+							<div>
+								<h4 class="text-center vert-align" id="price_padding"><%= number_to_currency product.price %></h4>
+							</div>
+						</span>
 					</div>
 				</div>
 			</div>

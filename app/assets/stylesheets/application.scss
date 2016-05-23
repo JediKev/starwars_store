@@ -109,6 +109,10 @@ table.table.table-hover tr td {
     vertical-align: middle;
 }
 
+.vert-align {
+	vertical-align: middle;
+}
+
 .table.table-hover tr td ul li {
 	list-style-type: none;
 	padding: 0 100% 0 0;
@@ -132,6 +136,10 @@ body>div>a:visited {
 
 td>ul>li>a:visited {
 	color: white;
+}
+
+#price_padding {
+	padding-top: 2%;
 }
 
 
