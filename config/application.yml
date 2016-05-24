@@ -3,4 +3,4 @@ production:
   AWS_ACCESS_KEY_ID: AKIAIGX2A7G5DHQWX7BQ
   AWS_SECRET_ACCESS_KEY: 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
   S3_BUCKET_NAME: starwarsstore
-  AWS_REGION: Oregon
+  AWS_REGION: us-west-2
